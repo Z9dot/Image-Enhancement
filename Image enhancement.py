@@ -7,8 +7,7 @@ path='image1.jpg'
 #Load as grayscale
 image=cv2.imread(path,0)
 
-# inverted_thresh=cv2.adaptiveThreshold(image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,17,2)
-thresh = cv2.bitwise_not(cv2.adaptiveThreshold(image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,17,4))
+thresh = cv2.adaptiveThreshold(image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 31, -5)
 
 #performing morphological operations
 kernel = np.ones((3,3), np.uint8)
